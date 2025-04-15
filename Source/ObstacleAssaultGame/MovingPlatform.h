@@ -1,0 +1,43 @@
+
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Actor.h"
+#include "MovingPlatform.generated.h"
+
+UCLASS()
+class OBSTACLEASSAULTGAME_API AMovingPlatform : public AActor
+{
+	GENERATED_BODY()
+	
+public:	
+	// Sets default values for this actor's properties
+	AMovingPlatform();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	//Back & Forth
+	void MovePlatform(float DeltaTime);
+	float GetDistanceMoved() const;
+	bool ShouldPlatformReturn() const;
+	FVector StartLocation;
+
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	FVector PlatformVelocity;
+	UPROPERTY(EditAnywhere, Category="Moving Platform")
+	float AllowedDistance;
+	UPROPERTY(VisibleAnywhere, Category="Moving Platform")
+	float DistanceMoved;
+
+	//Rotation
+	void RotatePlatform(float DeltaTime);
+	UPROPERTY(EditAnywhere, Category="Rotation")
+	FRotator RotationVelocity;
+};
