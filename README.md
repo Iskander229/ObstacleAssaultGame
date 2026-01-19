@@ -8,11 +8,7 @@ This project has taught me, in general, to:
 
 Work with C++ in the Engine,
 
-Use UPROPERTY variables
-
 Adapt the Functions methods in C++ for the Engine
-
-Use member functions and return statements within C++ in the Engine
 
 Robustify the code as a great advantage of C++ in front of using Blueprints (+ feels A LOT flexible) 
 
